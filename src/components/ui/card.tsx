@@ -2,10 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { PeopleResult } from '@/types';
-import { cn } from '@/utils/cn';
+import { cn } from '@/shared/cn';
 
-import { Image } from './Image';
-import { Text } from './Typography';
+import { Image } from './image';
+import { Text } from './typography';
 
 interface Props {
   data: PeopleResult;

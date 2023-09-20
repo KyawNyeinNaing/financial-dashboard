@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/shared/cn';
 import * as Ariakit from '@ariakit/react';
 
 import '@/styles/combobox.css';

@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/shared/cn';
 import * as Ariakit from '@ariakit/react';
 
-import { Icons } from './Image';
+import { Icons } from './image';
 
 import '@/styles/modal.css';
 

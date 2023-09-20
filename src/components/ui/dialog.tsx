@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { RxCross2 } from 'react-icons/rx';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/shared/cn';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
 const Dialog = DialogPrimitive.Root;
