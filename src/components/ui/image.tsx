@@ -1,5 +1,7 @@
 import NextImage from 'next/image';
 import {
+  PiArrowDownRightThin,
+  PiArrowUpRightThin,
   PiArrowsLeftRightDuotone,
   PiCaretDownThin,
   PiCaretUpThin,
@@ -14,6 +16,9 @@ import {
   PiWallet,
 } from 'react-icons/pi';
 import { RxCross2, RxDashboard, RxMagnifyingGlass } from 'react-icons/rx';
+import { MdOutlineMailOutline } from 'react-icons/md';
+import { IoNotificationsOutline } from 'react-icons/io5';
+import { FcBusinesswoman } from 'react-icons/fc';
 
 import { IconType } from '@/shared/enum';
 
@@ -58,6 +63,11 @@ export const Icons = {
   caretUp: PiCaretUpThin,
   caretDown: PiCaretDownThin,
   check: PiCheckThin,
+  email: MdOutlineMailOutline,
+  notification: IoNotificationsOutline,
+  profile: FcBusinesswoman,
+  upRight: PiArrowUpRightThin,
+  downRight: PiArrowDownRightThin,
 };
 
 interface Image {

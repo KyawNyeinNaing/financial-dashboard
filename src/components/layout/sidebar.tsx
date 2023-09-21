@@ -4,13 +4,16 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { Icons } from '@/components/ui/image';
 import { cn } from '@/shared/cn';
 import { menuList } from './menuList';
+import { useRouter } from 'next/navigation';
 
 const Sidebar = () => {
   const [open, setOpen] = React.useState<string | null>('/dashboard');
   const [childActive, setChildActive] = React.useState<string>('/dashboard');
+  const router = useRouter();
   const handleCollapse = (key: any, item: any) => {
     if (!item.child) {
       setChildActive(item.key);
+      router.push(item.key);
     }
     if (open && key === open) {
       setOpen(null);
@@ -23,51 +26,54 @@ const Sidebar = () => {
   };
   return (
     <>
-      <div>
-        <div className="px-12 font-semibold mb-16">MAIN MENU</div>
-        {menuList?.length &&
-          menuList?.map((item, index) => {
-            let active = childActive;
-            if (!item.child) {
-              active = active?.split('-')[0];
-            }
-            return (
-              <Collapsible
-                key={index}
-                className="CollapsibleRoot"
-                open={open === item.key}
-                onOpenChange={() => handleCollapse(item.key, item)}
-              >
-                <CollapsibleTrigger asChild>
-                  <div
-                    className={cn(
-                      'flex rounded-18 hover:bg-secondary-100 hover:text-secondary-800 p-12 align-middle justify-between mb-8',
-                      active === item.key ? 'text-secondary-800 bg-secondary-100 font-semibold' : ''
-                    )}
-                  >
-                    <div className="flex items-center gap-x-2">
-                      <div>{item.icon}</div>
-                      <div>{item.title}</div>
+      <div className="w-[300px] h-screen p-[25px] bg-default-light dark:bg-default-dark">
+        <div className="px-12 font-semibold mb-16">Wallet</div>
+        <div className="space-y-[30px]">
+          {menuList?.length &&
+            menuList?.map((item, index) => {
+              let active = childActive;
+              if (!item.child) {
+                active = active?.split('-')[0];
+              }
+              return (
+                <Collapsible
+                  key={index}
+                  className="CollapsibleRoot"
+                  open={open === item.key}
+                  onOpenChange={() => handleCollapse(item.key, item)}
+                >
+                  <CollapsibleTrigger asChild>
+                    <div
+                      className={cn(
+                        'flex rounded-18 hover:bg-secondary-100 hover:text-secondary-800 align-middle justify-between',
+                        active === item.key
+                          ? 'text-secondary-800 bg-secondary-100 font-semibold'
+                          : ''
+                      )}
+                    >
+                      <div className="flex justify-center items-center gap-x-2">
+                        <div>{item.icon}</div>
+                        <div>{item.title}</div>
+                      </div>
+                      {item.child && item.child.length > 0 && (
+                        <button>
+                          {open === item.key ? (
+                            <Icons.caretUp className="w-24 h-24" />
+                          ) : (
+                            <Icons.caretDown className="w-24 h-24" />
+                          )}
+                        </button>
+                      )}
                     </div>
-                    {item.child && item.child.length > 0 && (
-                      <button>
-                        {open === item.key ? (
-                          <Icons.caretUp className="w-24 h-24" />
-                        ) : (
-                          <Icons.caretDown className="w-24 h-24" />
-                        )}
-                      </button>
-                    )}
-                  </div>
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                  {item.child &&
-                    item.child.length > 0 &&
-                    item.child.map((itemChild, index) => (
-                      <div
-                        onClick={() => handleClickChild(`${item.key}-${index}`)}
-                        key={index}
-                        className={`
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    {item.child &&
+                      item.child.length > 0 &&
+                      item.child.map((itemChild, index) => (
+                        <div
+                          onClick={() => handleClickChild(`${item.key}-${index}`)}
+                          key={index}
+                          className={`
                         ${
                           active === `${item.key}-${index}`
                             ? 'text-secondary-800 bg-secondary-100 font-semibold '
@@ -75,15 +81,16 @@ const Sidebar = () => {
                         }
                         mb-8 ml-16 flex gap-16 cursor-pointer p-12 rounded-18 hover:bg-secondary-100 hover:text-secondary-800
                         `}
-                      >
-                        {itemChild.icon}
-                        {itemChild.title}
-                      </div>
-                    ))}
-                </CollapsibleContent>
-              </Collapsible>
-            );
-          })}
+                        >
+                          {itemChild.icon}
+                          {itemChild.title}
+                        </div>
+                      ))}
+                  </CollapsibleContent>
+                </Collapsible>
+              );
+            })}
+        </div>
       </div>
     </>
   );

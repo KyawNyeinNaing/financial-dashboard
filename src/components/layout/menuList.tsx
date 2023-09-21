@@ -1,7 +1,7 @@
 import { Icons } from '@/components/ui/image';
 
 export interface Menu {
-  key?: string;
+  key: string;
   icon: JSX.Element;
   title: string;
   child?: {
@@ -14,50 +14,50 @@ export interface Menu {
 export const menuList: Menu[] = [
   {
     key: '/dashboard',
-    icon: <Icons.dashboard />,
+    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
     title: 'Dashboard',
     child: [],
   },
   {
     key: '/wallet',
-    icon: <Icons.wallet />,
-    title: 'Dashboard',
+    icon: <Icons.wallet className="w-[20px] h-[20px]" />,
+    title: 'Wallet',
     child: [],
   },
   {
     key: '/transactions',
-    icon: <Icons.transactions />,
-    title: 'Dashboard',
+    icon: <Icons.transactions className="w-[20px] h-[20px]" />,
+    title: 'Transactions',
     child: [],
   },
   {
     key: '/cashback',
-    icon: <Icons.cashback />,
-    title: 'Dashboard',
+    icon: <Icons.cashback className="w-[20px] h-[20px]" />,
+    title: 'Cashback',
     child: [],
   },
   {
     key: '/payments',
-    icon: <Icons.payments />,
-    title: 'Dashboard',
+    icon: <Icons.payments className="w-[20px] h-[20px]" />,
+    title: 'Payments',
     child: [],
   },
   {
     key: '/investment',
-    icon: <Icons.investment />,
-    title: 'Dashboard',
+    icon: <Icons.investment className="w-[20px] h-[20px]" />,
+    title: 'Investment',
     child: [],
   },
   {
     key: '/profile',
-    icon: <Icons.user />,
-    title: 'Dashboard',
+    icon: <Icons.user className="w-[20px] h-[20px]" />,
+    title: 'Profile',
     child: [],
   },
   {
     key: '/support',
-    icon: <Icons.support />,
-    title: 'Dashboard',
+    icon: <Icons.support className="w-[20px] h-[20px]" />,
+    title: 'Support',
     child: [],
   },
   // {

@@ -1,5 +1,7 @@
+import { IconButton, TextField } from '@radix-ui/themes';
 import React from 'react';
 import styled from 'styled-components';
+import { Icons } from './image';
 
 type Props = {
   type?: 'text' | 'email' | 'password' | 'number' | 'submit' | 'hidden';
@@ -38,7 +40,6 @@ const InputText = React.forwardRef<HTMLInputElement, Props>(
     );
   }
 );
-
 InputText.displayName = 'InputText';
 
 InputText.defaultProps = {
@@ -46,7 +47,25 @@ InputText.defaultProps = {
   placeholder: 'Placeholder',
 };
 
-export default InputText;
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
+
+const InputSearch = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ type, placeholder, className }, ref) => {
+    return (
+      <TextField.Root>
+        <TextField.Input className={className} placeholder={placeholder} size="3" ref={ref} />
+        <TextField.Slot pr="3">
+          <IconButton size="2" variant="ghost">
+            <Icons.search height="16" width="16" />
+          </IconButton>
+        </TextField.Slot>
+      </TextField.Root>
+    );
+  }
+);
+InputSearch.displayName = 'InputSearch';
+
+export { InputText, InputSearch };
 
 const InputStyled = styled.input`
   color: #ffffff;
