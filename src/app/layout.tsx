@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
-import Header from '@/components/layout/header';
+import Header from '@/components/layout/Header';
 import { fontSans } from '@/configs/fonts';
 import { JotaiProvider } from '@/providers/jotai';
 import { ThemeProvider } from '@/providers/theme';
@@ -10,7 +10,7 @@ import { ServerThemeProvider } from '@wits/next-themes';
 
 import '@/styles/globals.css';
 import '@radix-ui/themes/styles.css';
-import Sidebar from '@/components/layout/sidebar';
+import Sidebar from '@/components/layout/Sidebar';
 
 export const metadata: Metadata = {
   title: 'Financial Dashboard',

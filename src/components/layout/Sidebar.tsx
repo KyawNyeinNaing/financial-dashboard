@@ -3,7 +3,7 @@ import React from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Icons } from '@/components/ui/image';
 import { cn } from '@/shared/cn';
-import { menuList } from './menuList';
+import { menuList } from './MenuList';
 import { useRouter } from 'next/navigation';
 
 const Sidebar = () => {
