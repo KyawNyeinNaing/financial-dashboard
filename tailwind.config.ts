@@ -28,6 +28,17 @@ const config: Config = {
           100: '#c3c1ff',
           200: '#5a99de',
         },
+        dark: {
+          100: '#c2becc',
+        },
+        label: {
+          light: '#5a99de',
+          dark: '#fafafe',
+        },
+        gradient: {
+          left: '#5965b7',
+          right: '#714caa',
+        },
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],

@@ -16,6 +16,12 @@
   }
 }
 
+@layer utilities {
+  .bg-theme {
+    @apply bg-gradient-to-r from-gradient-left to-gradient-right hover:from-pink-500 hover:to-yellow-500
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

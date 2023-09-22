@@ -2,6 +2,7 @@ import BarChart from '@/components/dashboard/BarChart';
 import PieChart from '@/components/dashboard/PieChart';
 import StackedAreaChart from '@/components/dashboard/StackedAreaChart';
 import TinyAreaChart from '@/components/dashboard/TinyAreaChart';
+import Transactions from '@/components/dashboard/Transcations';
 import React from 'react';
 
 const Dashboard = () => {
@@ -30,13 +31,13 @@ const Dashboard = () => {
           </div>
           <div className="grid grid-cols-12 gap-x-4">
             <div className="col-span-4">
-              <PieChart className="h-auto" chartClassName="h-[200px]" />
+              <PieChart className="h-auto" chartClassName="h-[241px]" />
             </div>
             <div className="col-span-4">
-              <PieChart className="h-auto" chartClassName="h-[200px]" />
+              <Transactions className="h-[300px]" />
             </div>
             <div className="col-span-4">
-              <PieChart className="h-auto" chartClassName="h-[200px]" />
+              <PieChart className="h-auto" chartClassName="h-[300px]" />
             </div>
           </div>
         </div>
