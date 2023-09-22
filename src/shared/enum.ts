@@ -6,3 +6,8 @@ export enum IconType {
 export enum TYPES {
   CHARACTER_LIST = 'CHARACTER_LIST',
 }
+
+export enum CONDITION {
+  UP = 'up',
+  DOWN = 'down',
+}

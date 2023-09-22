@@ -20,8 +20,9 @@ import {
 } from 'react-icons/pi';
 import { RxCross2, RxDashboard, RxMagnifyingGlass } from 'react-icons/rx';
 import { MdOutlineMailOutline } from 'react-icons/md';
-import { IoNotificationsOutline } from 'react-icons/io5';
+import { IoLogoApple, IoNotificationsOutline } from 'react-icons/io5';
 import { FcBusinesswoman } from 'react-icons/fc';
+import { SiAmazon, SiNetflix, SiTesla } from 'react-icons/si';
 
 import { IconType } from '@/shared/enum';
 
@@ -74,6 +75,10 @@ export const Icons = {
   leftRight: PiArrowsLeftRightThin,
   car: PiCar,
   bag: PiBagSimpleThin,
+  apple: IoLogoApple,
+  tesla: SiTesla,
+  netflix: SiNetflix,
+  amazon: SiAmazon,
 };
 
 interface Image {

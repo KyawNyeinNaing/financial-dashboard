@@ -16,13 +16,13 @@ import { cn } from '@/shared/cn';
 const data = [
   { name: 'Other', value: 93.04 },
   { name: 'Supermarkets', value: 186.65 },
-  { name: 'Transfers', value: 207.82 },
   { name: 'Restaurants', value: 197.25 },
+  { name: 'Transfers', value: 207.82 },
   { name: 'Cash', value: 340 },
   { name: 'Study', value: 500.85 },
 ];
 
-const COLORS = ['#392c6b', '#5366fe', '#5cc7ff', '#9f4cfe', '#ea60fe', '#fe54b1'];
+const COLORS = ['#392c6b', '#5366fe', '#5cc7ff', '#ea60fe', '#9f4cfe', '#fe54b1'];
 
 interface Props {
   className?: string;

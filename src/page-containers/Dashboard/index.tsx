@@ -1,4 +1,6 @@
 import BarChart from '@/components/dashboard/BarChart';
+import Investment from '@/components/dashboard/Investment';
+import PaymentCard from '@/components/dashboard/PaymentCard';
 import PieChart from '@/components/dashboard/PieChart';
 import StackedAreaChart from '@/components/dashboard/StackedAreaChart';
 import TinyAreaChart from '@/components/dashboard/TinyAreaChart';
@@ -37,12 +39,12 @@ const Dashboard = () => {
               <Transactions className="h-[300px]" />
             </div>
             <div className="col-span-4">
-              <PieChart className="h-auto" chartClassName="h-[300px]" />
+              <Investment className="h-[300px]" />
             </div>
           </div>
         </div>
         <div className="col-span-3">
-          <BarChart className="h-[218px]" chartClassName="h-[160px]" />
+          <PaymentCard />
         </div>
       </div>
     </>
