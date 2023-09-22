@@ -47,10 +47,16 @@ const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   {
     label?: string;
+    setTheme: (theme: string) => void;
   } & React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
->(({ className, label, ...props }, ref) => (
+>(({ className, label, setTheme, ...props }, ref) => (
   <SwitchStyled align="center" gap="4">
-    <SwitchPrimitives.Root className="root bg-theme" id="airplane-mode" {...props}>
+    <SwitchPrimitives.Root
+      onCheckedChange={check => setTheme(check ? 'dark' : 'light')}
+      className="root bg-theme"
+      id="airplane-mode"
+      {...props}
+    >
       <SwitchPrimitives.Thumb className="thumb" />
     </SwitchPrimitives.Root>
     <label className="label" htmlFor="airplane-mode" style={{ paddingRight: 15 }}>

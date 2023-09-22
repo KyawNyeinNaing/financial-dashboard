@@ -7,11 +7,14 @@ import { actionMenu, menuList } from './MenuList';
 import { useRouter } from 'next/navigation';
 import { Flex } from '@radix-ui/themes';
 import { Switch } from '@/components/ui/switch';
+import { useTheme } from 'next-themes';
 
 const Sidebar = () => {
   const [open, setOpen] = React.useState<string | null>('/dashboard');
   const [childActive, setChildActive] = React.useState<string>('/dashboard');
   const router = useRouter();
+  const { setTheme }: { setTheme: (theme: string) => void } = useTheme();
+
   const handleCollapse = (key: any, item: any) => {
     if (!item.child) {
       setChildActive(item.key);
@@ -136,7 +139,7 @@ const Sidebar = () => {
             })}
         </div>
         <div className="absolute bottom-7">
-          <Switch label="Switch to light" />
+          <Switch label="Switch to light" setTheme={setTheme} />
         </div>
       </div>
     </>

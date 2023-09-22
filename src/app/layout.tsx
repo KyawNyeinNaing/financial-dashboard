@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <head />
         <body>
           <JotaiProvider>
-            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
               <Theme>
                 <div className="flex justify-start items-start">
                   <div className="fixed top-0 left-0">
