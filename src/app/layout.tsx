@@ -11,6 +11,7 @@ import { ServerThemeProvider } from '@wits/next-themes';
 import '@/styles/globals.css';
 import '@radix-ui/themes/styles.css';
 import Sidebar from '@/components/layout/Sidebar';
+import { Switch } from '@/components/ui/switch';
 
 export const metadata: Metadata = {
   title: 'Financial Dashboard',
@@ -26,11 +27,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <JotaiProvider>
             <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
               <Theme>
-                {/* <Header />
-                {children} */}
                 <div className="flex justify-start items-start">
-                  <Sidebar />
-                  <div className="w-full bg-primary-light dark:bg-primary-dark px-10">
+                  <div className="fixed top-0 left-0">
+                    <Sidebar />
+                  </div>
+                  <div className="w-full ml-[300px] bg-primary-light dark:bg-primary-dark px-4">
                     <Header />
                     <div>{children}</div>
                   </div>

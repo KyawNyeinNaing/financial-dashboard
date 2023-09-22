@@ -80,3 +80,18 @@ export const menuList: Menu[] = [
   //   ],
   // },
 ];
+
+export const actionMenu: Menu[] = [
+  {
+    key: '/setting',
+    icon: <Icons.setting className="w-[20px] h-[20px]" />,
+    title: 'Setting',
+    child: [],
+  },
+  {
+    key: '',
+    icon: <Icons.logout className="w-[20px] h-[20px]" />,
+    title: 'Logout',
+    child: [],
+  },
+];

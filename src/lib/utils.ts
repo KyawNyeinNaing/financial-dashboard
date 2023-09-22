@@ -17,3 +17,9 @@ export const maskNumber = (value: number | string) => {
     masked,
   };
 };
+
+export const fallbackString = (value: string) => {
+  if (value && value.trim() !== '') {
+    return value.charAt(0);
+  }
+};

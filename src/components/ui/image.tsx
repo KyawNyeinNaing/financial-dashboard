@@ -28,6 +28,7 @@ import { MdOutlineMailOutline } from 'react-icons/md';
 import { IoLogoApple, IoNotificationsOutline } from 'react-icons/io5';
 import { FcBusinesswoman } from 'react-icons/fc';
 import { SiAmazon, SiNetflix, SiTesla } from 'react-icons/si';
+import { CiLogout, CiSettings } from 'react-icons/ci';
 
 import { IconType } from '@/shared/enum';
 
@@ -89,6 +90,8 @@ export const Icons = {
   tesla: SiTesla,
   netflix: SiNetflix,
   amazon: SiAmazon,
+  setting: CiSettings,
+  logout: CiLogout,
 };
 
 interface Image {

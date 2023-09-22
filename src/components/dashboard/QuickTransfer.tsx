@@ -16,7 +16,7 @@ import { transactionData } from '@/data/transaction';
 import { CONDITION, SELECT_ICONS } from '@/shared/enum';
 import { quickTransferData } from '@/data/quickTransfer';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { maskNumber } from '@/lib/utils';
+import { fallbackString, maskNumber } from '@/lib/utils';
 
 interface Props {
   className?: string;
@@ -46,7 +46,7 @@ const QuickTransfer: React.FC<Props> = ({ className }: Props) => {
           <Flex justify="start" gap="3">
             <div className="bg-theme w-[35px] h-[35px] rounded-full flex justify-center items-center">
               <Avatar>
-                <AvatarFallback>PD</AvatarFallback>
+                <AvatarFallback>{fallbackString(each.name)}</AvatarFallback>
               </Avatar>
             </div>
             <Flex direction="column">
