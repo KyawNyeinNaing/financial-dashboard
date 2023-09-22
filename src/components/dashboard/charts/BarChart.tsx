@@ -23,46 +23,15 @@ import {
 } from '@/components/ui/select';
 import { Icons } from '@/components/ui/image';
 import { cn } from '@/shared/cn';
-
-const data = [
-  {
-    name: 'Feb',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Mar',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Apr',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Jun',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Jul',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-];
+import { Financial } from '@/data/analysis/financial';
 
 interface Props {
+  data: Financial[];
   className?: string;
   chartClassName?: string;
 }
 
-const BarChart: React.FC<Props> = ({ className, chartClassName }: Props) => {
+const BarChart: React.FC<Props> = ({ className, chartClassName, data }: Props) => {
   return (
     <CardBox
       className={cn(
@@ -80,6 +49,16 @@ const BarChart: React.FC<Props> = ({ className, chartClassName }: Props) => {
             <SelectItem value="this month">this month</SelectItem>
           </SelectContent>
         </Select>
+      </Flex>
+      <Flex gap="3" px="4">
+        <Flex align="center" gap="2">
+          <div className="w-2 h-2 rounded-full bg-pink-100" />
+          <Text>Expenses</Text>
+        </Flex>
+        <Flex align="center" gap="2">
+          <div className="w-2 h-2 rounded-full bg-theme" />
+          <Text>Income</Text>
+        </Flex>
       </Flex>
       <div className={cn('w-full h-[122px]', chartClassName)}>
         <ResponsiveContainer width="100%" height="100%">

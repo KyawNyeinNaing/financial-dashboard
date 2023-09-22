@@ -10,6 +10,7 @@ import Transactions from '@/components/dashboard/Transactions';
 import React from 'react';
 import { expensesData, incomeData, investmentData } from '@/data';
 import { analysisData } from '@/data/analysis';
+import { financialData } from '@/data/analysis/financial';
 
 const Dashboard = () => {
   return (
@@ -36,7 +37,7 @@ const Dashboard = () => {
               />
             </div>
             <div className="col-span-4">
-              <BarChart className="h-[290]" chartClassName="h-[200px]" />
+              <BarChart data={financialData} className="h-[290]" chartClassName="h-[200px]" />
             </div>
           </div>
           <div className="grid grid-cols-12 gap-x-4">
