@@ -13,13 +13,16 @@ import { Flex } from '@radix-ui/themes';
 import React from 'react';
 import { Icons } from '@/components/ui/image';
 import { transactionData } from '@/data/transaction';
-import { CONDITION } from '@/shared/enum';
+import { CONDITION, SELECT_ICONS } from '@/shared/enum';
+import { quickTransferData } from '@/data/quickTransfer';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { maskNumber } from '@/lib/utils';
 
 interface Props {
   className?: string;
 }
 
-const Transactions: React.FC<Props> = ({ className }: Props) => {
+const QuickTransfer: React.FC<Props> = ({ className }: Props) => {
   return (
     <CardBox
       className={cn(
@@ -28,42 +31,34 @@ const Transactions: React.FC<Props> = ({ className }: Props) => {
       )}
     >
       <Flex justify="between">
-        <Text size="5">Transactions</Text>
+        <Text size="5">Quick Transfers</Text>
         <Select>
-          <SelectTrigger className="h-8 w-[80px] border-none">
-            <SelectValue placeholder="today" />
+          <SelectTrigger icon={SELECT_ICONS.PLUS} className="h-8 w-[70px] border-none">
+            <SelectValue placeholder="add" />
           </SelectTrigger>
           <SelectContent side="top">
-            <SelectItem value="today">today</SelectItem>
+            <SelectItem value="add">add</SelectItem>
           </SelectContent>
         </Select>
       </Flex>
-      {transactionData?.map((each, key) => (
+      {quickTransferData?.map((each, key) => (
         <Flex key={key} justify="between">
           <Flex justify="start" gap="3">
             <div className="bg-theme w-[35px] h-[35px] rounded-full flex justify-center items-center">
-              {each.icon}
+              <Avatar>
+                <AvatarFallback>PD</AvatarFallback>
+              </Avatar>
             </div>
             <Flex direction="column">
               <Text>{each.name}</Text>
-              <Text className="text-dark-100">{each.process}</Text>
+              <Text className="text-dark-100">{maskNumber(each.accountNumber).masked}</Text>
             </Flex>
           </Flex>
-          <Flex direction="column" align="end">
-            <Text
-              className={cn(
-                'text-[14px]',
-                each.condition === CONDITION.UP ? 'text-blue-200' : 'text-red-500'
-              )}
-            >
-              {`$${each.condition === CONDITION.UP ? '+' : '-'}${each.amount}`}
-            </Text>
-            <Text className="text-dark-100">{each.cardType}</Text>
-          </Flex>
+          <Icons.caretRight />
         </Flex>
       ))}
     </CardBox>
   );
 };
 
-export default Transactions;
+export default QuickTransfer;

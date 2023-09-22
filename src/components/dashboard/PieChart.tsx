@@ -46,7 +46,7 @@ const PieChart: React.FC<Props> = ({ className, chartClassName }: Props) => {
         className
       )}
     >
-      <Flex justify="start" px="4" pt="4">
+      <Flex justify="between" px="4" pt="4">
         <Text size="5">Expenses</Text>
         <Select>
           <SelectTrigger className="h-8 w-[110px] border-none">

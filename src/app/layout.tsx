@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <head />
         <body>
           <JotaiProvider>
-            <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
               <Theme>
                 {/* <Header />
                 {children} */}

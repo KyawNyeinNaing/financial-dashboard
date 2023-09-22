@@ -6,3 +6,14 @@ export const findByName = (data: any, selected: string | undefined) => {
     return each.name === selected;
   });
 };
+
+export const maskNumber = (value: number | string) => {
+  const numberString = value.toString();
+  const lastFourDigits = numberString.slice(-4);
+  const masked = '*'.repeat(4) + lastFourDigits;
+
+  return {
+    lastFour: lastFourDigits,
+    masked,
+  };
+};

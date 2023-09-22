@@ -11,3 +11,14 @@ export enum CONDITION {
   UP = 'up',
   DOWN = 'down',
 }
+
+export enum SELECT_ICONS {
+  DOWN_CARET = 'arrow',
+  PLUS = 'plus',
+}
+
+export enum GOALS_ICONS {
+  TRIP = 'trip',
+  HOUSE = 'house',
+  CAMERA = 'camera',
+}

@@ -5,6 +5,7 @@ import { cn } from '@/shared/cn';
 import * as SelectPrimitive from '@radix-ui/react-select';
 
 import { Icons } from './image';
+import { SELECT_ICONS } from '@/shared/enum';
 
 const Select = SelectPrimitive.Root;
 
@@ -14,22 +15,31 @@ const SelectValue = SelectPrimitive.Value;
 
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Trigger
-    ref={ref}
-    className={cn(
-      'flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 space-x-[5px]',
-      className
-    )}
-    {...props}
-  >
-    {children}
-    <SelectPrimitive.Icon asChild>
-      <Icons.caretDown />
-    </SelectPrimitive.Icon>
-  </SelectPrimitive.Trigger>
-));
+  {
+    icon?: SELECT_ICONS;
+  } & React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
+>(({ className, children, icon = SELECT_ICONS.DOWN_CARET, ...props }, ref) => {
+  const iconComponents: { [key in SELECT_ICONS]: React.ReactNode } = {
+    [SELECT_ICONS.PLUS]: <Icons.plus />,
+    [SELECT_ICONS.DOWN_CARET]: <Icons.caretDown />,
+  };
+
+  const selectedIcon = iconComponents[icon as SELECT_ICONS];
+
+  return (
+    <SelectPrimitive.Trigger
+      ref={ref}
+      className={cn(
+        'flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 space-x-[5px]',
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <SelectPrimitive.Icon asChild>{selectedIcon}</SelectPrimitive.Icon>
+    </SelectPrimitive.Trigger>
+  );
+});
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
 
 const SelectContent = React.forwardRef<

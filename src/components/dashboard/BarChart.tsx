@@ -70,7 +70,7 @@ const BarChart: React.FC<Props> = ({ className, chartClassName }: Props) => {
         className
       )}
     >
-      <Flex justify="start" px="4" pt="4">
+      <Flex justify="between" px="4" pt="4">
         <Text size="5">Financial analysis</Text>
         <Select>
           <SelectTrigger className="h-8 w-[130px] border-none">

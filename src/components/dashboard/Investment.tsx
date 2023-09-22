@@ -28,10 +28,10 @@ const Investment: React.FC<Props> = ({ className }: Props) => {
         className
       )}
     >
-      <Flex justify="start">
+      <Flex justify="between">
         <Text size="5">Investment</Text>
         <Select>
-          <SelectTrigger className="h-8 w-[130px] border-none">
+          <SelectTrigger className="h-8 w-[80px] border-none">
             <SelectValue placeholder="today" />
           </SelectTrigger>
           <SelectContent side="top">
