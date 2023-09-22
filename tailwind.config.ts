@@ -28,6 +28,9 @@ const config: Config = {
           100: '#c3c1ff',
           200: '#5a99de',
         },
+        pink: {
+          100: '#f26cbb',
+        },
         dark: {
           100: '#c2becc',
         },

@@ -21,58 +21,16 @@ import {
 } from '@/components/ui/select';
 import { Icons } from '@/components/ui/image';
 import { cn } from '@/shared/cn';
-
-const data = [
-  {
-    name: 'Page A',
-    uv: 0,
-    pv: 200,
-    amt: 300,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+import { ChartData } from '@/data';
+import { CONDITION } from '@/shared/enum';
 
 interface Props {
+  data: ChartData;
   className?: string;
   chartClassName?: string;
 }
 
-const TinyAreaChart: React.FC<Props> = ({ className, chartClassName }: Props) => {
+const TinyAreaChart: React.FC<Props> = ({ className, chartClassName, data }: Props) => {
   return (
     <CardBox
       className={cn(
@@ -81,7 +39,7 @@ const TinyAreaChart: React.FC<Props> = ({ className, chartClassName }: Props) =>
       )}
     >
       <Flex justify="between" px="4" pt="4">
-        <Text size="5">Income</Text>
+        <Text size="5">{data.name}</Text>
         <Select>
           <SelectTrigger className="h-8 w-auto border-none">
             <SelectValue placeholder="this month" />
@@ -94,17 +52,23 @@ const TinyAreaChart: React.FC<Props> = ({ className, chartClassName }: Props) =>
       <Flex>
         <Box pl="4" className="w-[80px]">
           <Flex direction="column" justify="between" align="start" height="100%">
-            <Text size="5">$6558.67</Text>
+            <Text size="5">${data.incomeAmount}</Text>
             <div className="flex items-center gap-x-[5px] text-blue-200 pb-[20px]">
-              <Icons.upRight className="w-[15px] h-[15px]" />
-              <Text>+16%</Text>
+              <Text size="1" className="flex justify-start items-center gap-x-[5px]">
+                {data.condition === CONDITION.UP ? (
+                  <Icons.upRight className="w-[15px] h-[15px] text-blue-200" />
+                ) : (
+                  <Icons.downRight className="w-[15px] h-[15px] text-red-500" />
+                )}
+                {data.percent}%
+              </Text>
             </div>
           </Flex>
         </Box>
         <div className={cn('w-full h-[115px]', chartClassName)}>
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
-              data={data}
+              data={data.chartData}
               margin={{
                 top: 5,
                 right: 0,

@@ -21,88 +21,15 @@ import {
 } from '@/components/ui/select';
 import { Icons } from '@/components/ui/image';
 import { cn } from '@/shared/cn';
-
-const data = [
-  {
-    name: 'Jan',
-    uv: 0,
-    pv: 200,
-    amt: 300,
-  },
-  {
-    name: 'Feb',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Mar',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Apr',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'May',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Jun',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Jul',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-  {
-    name: 'Aug',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-  {
-    name: 'Sep',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-  {
-    name: 'Oct',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-  {
-    name: 'Nov',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-  {
-    name: 'Dec',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+import { Analysis } from '@/data/analysis';
 
 interface Props {
+  data: Analysis[];
   className?: string;
   chartClassName?: string;
 }
 
-const StackedAreaChart: React.FC<Props> = ({ className, chartClassName }: Props) => {
+const StackedAreaChart: React.FC<Props> = ({ className, chartClassName, data }: Props) => {
   return (
     <CardBox
       className={cn(
@@ -112,14 +39,26 @@ const StackedAreaChart: React.FC<Props> = ({ className, chartClassName }: Props)
     >
       <Flex justify="between" px="4" pt="4">
         <Text size="5">Revenue analysis</Text>
-        <Select>
-          <SelectTrigger className="h-8 w-auto border-none">
-            <SelectValue placeholder="this month" />
-          </SelectTrigger>
-          <SelectContent side="top">
-            <SelectItem value="this month">this month</SelectItem>
-          </SelectContent>
-        </Select>
+        <Flex>
+          <Select>
+            <SelectTrigger className="h-8 w-auto border-none">
+              <div className="w-2 h-2 rounded-full dark:bg-theme" />
+              <SelectValue placeholder="2020" />
+            </SelectTrigger>
+            <SelectContent side="top">
+              <SelectItem value="2020">2020</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select>
+            <SelectTrigger className="h-8 w-auto border-none">
+              <div className="w-2 h-2 rounded-full bg-pink-100" />
+              <SelectValue placeholder="2021" />
+            </SelectTrigger>
+            <SelectContent side="top">
+              <SelectItem value="2021">2021</SelectItem>
+            </SelectContent>
+          </Select>
+        </Flex>
       </Flex>
       <div className={cn('w-full h-[122px]', chartClassName)}>
         <ResponsiveContainer width="100%" height="100%">

@@ -1,13 +1,15 @@
-import BarChart from '@/components/dashboard/BarChart';
+import BarChart from '@/components/dashboard/charts/BarChart';
 import GoalsCard from '@/components/dashboard/GoalsCard';
 import Investment from '@/components/dashboard/Investment';
 import PaymentCard from '@/components/dashboard/PaymentCard';
-import PieChart from '@/components/dashboard/PieChart';
+import PieChart from '@/components/dashboard/charts/PieChart';
 import QuickTransfer from '@/components/dashboard/QuickTransfer';
-import StackedAreaChart from '@/components/dashboard/StackedAreaChart';
-import TinyAreaChart from '@/components/dashboard/TinyAreaChart';
-import Transactions from '@/components/dashboard/Transcations';
+import StackedAreaChart from '@/components/dashboard/charts/StackedAreaChart';
+import TinyAreaChart from '@/components/dashboard/charts/TinyAreaChart';
+import Transactions from '@/components/dashboard/Transactions';
 import React from 'react';
+import { expensesData, incomeData, investmentData } from '@/data';
+import { analysisData } from '@/data/analysis';
 
 const Dashboard = () => {
   return (
@@ -16,21 +18,25 @@ const Dashboard = () => {
         <div className="col-span-9 space-y-4">
           <div className="grid grid-cols-12 gap-x-4">
             <div className="col-span-4">
-              <TinyAreaChart />
+              <TinyAreaChart data={incomeData} />
             </div>
             <div className="col-span-4">
-              <TinyAreaChart />
+              <TinyAreaChart data={expensesData} />
             </div>
             <div className="col-span-4">
-              <TinyAreaChart />
+              <TinyAreaChart data={investmentData} />
             </div>
           </div>
           <div className="grid grid-cols-12 gap-x-4">
             <div className="col-span-8">
-              <StackedAreaChart className="h-[290]" chartClassName="h-[220px]" />
+              <StackedAreaChart
+                data={analysisData}
+                className="h-[290]"
+                chartClassName="h-[220px]"
+              />
             </div>
             <div className="col-span-4">
-              <BarChart className="h-[290]" chartClassName="h-[210px]" />
+              <BarChart className="h-[290]" chartClassName="h-[200px]" />
             </div>
           </div>
           <div className="grid grid-cols-12 gap-x-4">
