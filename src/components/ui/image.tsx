@@ -3,6 +3,9 @@ import {
   PiArrowDownRightThin,
   PiArrowUpRightThin,
   PiArrowsLeftRightDuotone,
+  PiArrowsLeftRightThin,
+  PiBagSimpleThin,
+  PiCar,
   PiCaretDownThin,
   PiCaretUpThin,
   PiChatTeardropTextThin,
@@ -68,6 +71,9 @@ export const Icons = {
   profile: FcBusinesswoman,
   upRight: PiArrowUpRightThin,
   downRight: PiArrowDownRightThin,
+  leftRight: PiArrowsLeftRightThin,
+  car: PiCar,
+  bag: PiBagSimpleThin,
 };
 
 interface Image {

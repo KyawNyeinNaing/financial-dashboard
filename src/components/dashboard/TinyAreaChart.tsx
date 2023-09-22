@@ -19,7 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Icons } from '../ui/image';
+import { Icons } from '@/components/ui/image';
 import { cn } from '@/shared/cn';
 
 const data = [

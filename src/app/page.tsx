@@ -1,6 +1,4 @@
-import Income from '@/components/dashboardCharts/TinyAreaChart';
-import Dashboard from '@/page-containers/Dashboard';
-import Image from 'next/image';
+import Dashboard from '@/page-containers/dashboard/Dashboard';
 
 export default function Home() {
   return <Dashboard />;

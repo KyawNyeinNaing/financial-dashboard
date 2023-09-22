@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 {children} */}
                 <div className="flex justify-start items-start">
                   <Sidebar />
-                  <div className="w-full bg-primary-light dark:bg-primary-dark px-10 h-screen">
+                  <div className="w-full bg-primary-light dark:bg-primary-dark px-10">
                     <Header />
                     <div>{children}</div>
                   </div>

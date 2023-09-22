@@ -1,6 +1,7 @@
-import StackedAreaChart from '@/components/dashboardCharts/StackedAreaChart';
-import TinyAreaChart from '@/components/dashboardCharts/TinyAreaChart';
-import { Container, Flex, Grid } from '@radix-ui/themes';
+import BarChart from '@/components/dashboard/BarChart';
+import PieChart from '@/components/dashboard/PieChart';
+import StackedAreaChart from '@/components/dashboard/StackedAreaChart';
+import TinyAreaChart from '@/components/dashboard/TinyAreaChart';
 import React from 'react';
 
 const Dashboard = () => {
@@ -24,12 +25,23 @@ const Dashboard = () => {
               <StackedAreaChart className="h-[218px]" chartClassName="h-[160px]" />
             </div>
             <div className="col-span-4">
-              <TinyAreaChart className="h-[218px]" chartClassName="h-[160px]" />
+              <BarChart className="h-[218px]" chartClassName="h-[160px]" />
+            </div>
+          </div>
+          <div className="grid grid-cols-12 gap-x-4">
+            <div className="col-span-4">
+              <PieChart className="h-auto" chartClassName="h-[200px]" />
+            </div>
+            <div className="col-span-4">
+              <PieChart className="h-auto" chartClassName="h-[200px]" />
+            </div>
+            <div className="col-span-4">
+              <PieChart className="h-auto" chartClassName="h-[200px]" />
             </div>
           </div>
         </div>
         <div className="col-span-3">
-          <TinyAreaChart />
+          <BarChart className="h-[218px]" chartClassName="h-[160px]" />
         </div>
       </div>
     </>
