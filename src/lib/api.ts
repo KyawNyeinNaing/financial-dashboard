@@ -34,15 +34,40 @@ export class FetchAPI {
       email: string;
       phone: string;
     }
-  ): Promise<ApiResponse & RelativeFilm & RelativeHomeWorld> {
+  ): Promise<ApiResponse> {
     const queryString = new URLSearchParams(parameters as any);
-    return await fetch(`${this.baseUrl}/${api}?${queryString.toString()}`, {
+    const url = `${this.baseUrl}/${api}?${queryString.toString()}`;
+
+    const requestOptions: RequestInit = {
       method,
-      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
       next: {
         revalidate: 3600,
       },
-    })
+    };
+
+    if (body) {
+      requestOptions.body = JSON.stringify(body);
+    }
+
+    try {
+      const response = await fetch(url, requestOptions);
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+      const result = await response.json();
+      return {
+        ...result,
+        lastFetchUpdated: dayjs().format('ddd, DD MMM YYYY HH:mm:ss [GMT]'),
+      };
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
+    }
+
+    return await fetch(url, requestOptions)
       .then(async (res: Response) => {
         const result = await res.json();
 
