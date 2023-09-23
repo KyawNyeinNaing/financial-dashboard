@@ -8,12 +8,15 @@ import { useRouter } from 'next/navigation';
 import { Flex } from '@radix-ui/themes';
 import { Switch } from '@/components/ui/switch';
 import { useTheme } from 'next-themes';
+import useAtomReducer from '@/hooks/useAtomReducer';
+import { TYPES } from '@/shared/enum';
 
 const Sidebar = () => {
   const [open, setOpen] = React.useState<string | null>('/dashboard');
   const [childActive, setChildActive] = React.useState<string>('/dashboard');
   const router = useRouter();
   const { setTheme }: { setTheme: (theme: string) => void } = useTheme();
+  const { items } = useAtomReducer(TYPES.SWITCH_THEME);
 
   const handleCollapse = (key: any, item: any) => {
     if (!item.child) {
@@ -29,6 +32,9 @@ const Sidebar = () => {
   const handleClickChild = (key: string) => {
     setChildActive(key);
   };
+
+  console.log(items);
+
   return (
     <>
       <div className="w-[300px] h-screen p-[25px] bg-default-light dark:bg-default-dark relative">
@@ -139,7 +145,10 @@ const Sidebar = () => {
             })}
         </div>
         <div className="absolute bottom-7">
-          <Switch label="Switch to light" setTheme={setTheme} />
+          <Switch
+            label={items.switchTheme ? 'Switch to light' : 'Switch to dark'}
+            setTheme={setTheme}
+          />
         </div>
       </div>
     </>

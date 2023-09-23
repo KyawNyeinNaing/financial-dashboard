@@ -1,10 +1,10 @@
 import { atom, useAtom } from 'jotai';
 
 import { PeopleResult } from '@/types';
-import { TYPES } from '@/utils/enum';
+import { TYPES } from '@/shared/enum';
 
 interface State {
-  peopleList: PeopleResult[] | null;
+  switchTheme: boolean | null;
 }
 
 interface Action {
@@ -13,15 +13,15 @@ interface Action {
 }
 
 const initialState: State = {
-  peopleList: [],
+  switchTheme: true,
 };
 
 const reducer = (state: State, action: Action) => {
   switch (action.type) {
-    case TYPES.CHARACTER_LIST:
+    case TYPES.SWITCH_THEME:
       return {
         ...state,
-        peopleList: action.payload,
+        switchTheme: action.payload,
       };
 
     default:
@@ -33,7 +33,7 @@ const reducerAtom = atom(initialState, (get, set, action) => {
   set(reducerAtom, reducer(get(reducerAtom), action as Action));
 });
 
-const useItemList = (type: TYPES) => {
+const useAtomReducer = (type: TYPES) => {
   const [items, dispatch] = useAtom(reducerAtom);
 
   const itemList = (payload: any) => {
@@ -49,4 +49,4 @@ const useItemList = (type: TYPES) => {
   };
 };
 
-export default useItemList;
+export default useAtomReducer;

@@ -4,7 +4,7 @@ export enum IconType {
 }
 
 export enum TYPES {
-  CHARACTER_LIST = 'CHARACTER_LIST',
+  SWITCH_THEME = 'SWITCH_THEME',
 }
 
 export enum CONDITION {
