@@ -14,15 +14,15 @@ import {
 import { cn } from '@/shared/cn';
 
 const data = [
-  { name: 'Other', value: 93.04 },
   { name: 'Supermarkets', value: 186.65 },
-  { name: 'Restaurants', value: 197.25 },
   { name: 'Transfers', value: 207.82 },
+  { name: 'Restaurants', value: 197.25 },
   { name: 'Cash', value: 340 },
   { name: 'Study', value: 500.85 },
+  { name: 'Other', value: 93.04 },
 ];
 
-const COLORS = ['#392c6b', '#5366fe', '#5cc7ff', '#ea60fe', '#9f4cfe', '#fe54b1'];
+const COLORS = ['#5366fe', '#5cc7ff', '#9f4cfe', '#ea60fe', '#fe54b1', '#392c6b'];
 
 interface Props {
   className?: string;
@@ -57,15 +57,13 @@ const PieChart: React.FC<Props> = ({ className, chartClassName }: Props) => {
           </SelectContent>
         </Select>
       </Flex>
-      <div className={cn('w-full h-[122px]', chartClassName)}>
+      <div className={cn('w-full h-[122px] flex gap-x-3', chartClassName)}>
         <ResponsiveContainer width="100%" height="100%">
           <PieReChart>
             <Pie
               data={data}
-              // cx={120}
-              // cy={200}
-              innerRadius={60}
-              outerRadius={80}
+              innerRadius={40}
+              outerRadius={50}
               fill="#8884d8"
               paddingAngle={5}
               dataKey="value"
@@ -76,7 +74,54 @@ const PieChart: React.FC<Props> = ({ className, chartClassName }: Props) => {
             </Pie>
           </PieReChart>
         </ResponsiveContainer>
+        <div className="space-y-[5px] pr-4">
+          <Flex justify="between" gap="2">
+            <Flex align="center" gap="2">
+              <div className="w-2 h-2 rounded-full bg-[#5366fe]" />
+              <Text size="2">Supermarkets</Text>
+            </Flex>
+            <Text size="2">$186.65</Text>
+          </Flex>
+          <Flex justify="between" gap="2">
+            <Flex align="center" gap="2">
+              <div className="w-2 h-2 rounded-full bg-[#5cc7ff]" />
+              <Text size="2">Transfers</Text>
+            </Flex>
+            <Text size="2">$207.82</Text>
+          </Flex>
+          <Flex justify="between" gap="2">
+            <Flex align="center" gap="2">
+              <div className="w-2 h-2 rounded-full bg-[#9f4cfe]" />
+              <Text size="2">Restaurants</Text>
+            </Flex>
+            <Text size="2">$207.82</Text>
+          </Flex>
+          <Flex justify="between" gap="2">
+            <Flex align="center" gap="2">
+              <div className="w-2 h-2 rounded-full bg-[#ea60fe]" />
+              <Text size="2">Cash</Text>
+            </Flex>
+            <Text size="2">$207.82</Text>
+          </Flex>
+          <Flex justify="between" gap="2">
+            <Flex align="center" gap="2">
+              <div className="w-2 h-2 rounded-full bg-[#fe54b1]" />
+              <Text size="2">Study</Text>
+            </Flex>
+            <Text size="2">$207.82</Text>
+          </Flex>
+          <Flex justify="between" gap="2">
+            <Flex align="center" gap="2">
+              <div className="w-2 h-2 rounded-full bg-[#392c6b]" />
+              <Text size="2">Other</Text>
+            </Flex>
+            <Text size="2">$207.82</Text>
+          </Flex>
+        </div>
       </div>
+      <Flex px="4" py="6">
+        <Text>You have spent 16% less money this week than last week</Text>
+      </Flex>
     </CardBox>
   );
 };

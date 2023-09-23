@@ -13,7 +13,7 @@ interface Action {
 }
 
 const initialState: State = {
-  switchTheme: true,
+  switchTheme: false,
 };
 
 const reducer = (state: State, action: Action) => {

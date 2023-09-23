@@ -13,6 +13,7 @@ const SwitchStyled = styled(Flex)`
     height: 15px;
     border-radius: 9999px;
     position: relative;
+    border: 1px solid;
     &:focus {
       box-shadow: 0 0 0 2px black;
     }
@@ -46,7 +47,7 @@ const Switch = React.forwardRef<
     setTheme: (theme: string) => void;
   } & React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
 >(({ className, label, setTheme, ...props }, ref) => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(true);
+  const [isChecked, setIsChecked] = React.useState<boolean>(false);
   const { itemList } = useAtomReducer(TYPES.SWITCH_THEME);
 
   return (

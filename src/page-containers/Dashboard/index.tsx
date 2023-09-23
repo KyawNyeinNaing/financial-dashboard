@@ -32,8 +32,8 @@ const Dashboard = () => {
             <div className="col-span-8">
               <StackedAreaChart
                 data={analysisData}
-                className="h-[290]"
-                chartClassName="h-[220px]"
+                className="h-[315px]"
+                chartClassName="h-[234px]"
               />
             </div>
             <div className="col-span-4">
@@ -42,7 +42,7 @@ const Dashboard = () => {
           </div>
           <div className="grid grid-cols-12 gap-x-4">
             <div className="col-span-4">
-              <PieChart className="h-auto" chartClassName="h-[241px]" />
+              <PieChart className="h-auto" />
             </div>
             <div className="col-span-4">
               <Transactions className="h-[300px]" />
@@ -58,10 +58,10 @@ const Dashboard = () => {
               <PaymentCard />
             </div>
             <div className="col-span-1">
-              <QuickTransfer className="h-[240px]" />
+              <QuickTransfer className="h-[250px]" />
             </div>
             <div className="col-span-1">
-              <GoalsCard className="h-[240px]" />
+              <GoalsCard className="h-[250px]" />
             </div>
           </div>
         </div>

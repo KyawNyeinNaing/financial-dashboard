@@ -27,7 +27,7 @@ import { RxCross2, RxDashboard, RxMagnifyingGlass } from 'react-icons/rx';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { IoLogoApple, IoNotificationsOutline } from 'react-icons/io5';
 import { FcBusinesswoman } from 'react-icons/fc';
-import { SiAmazon, SiNetflix, SiTesla } from 'react-icons/si';
+import { SiAmazon, SiNetflix, SiTesla, SiVivawallet } from 'react-icons/si';
 import { CiLogout, CiSettings } from 'react-icons/ci';
 
 import { IconType } from '@/shared/enum';
@@ -90,6 +90,7 @@ export const Icons = {
   tesla: SiTesla,
   netflix: SiNetflix,
   amazon: SiAmazon,
+  logo: SiVivawallet,
   setting: CiSettings,
   logout: CiLogout,
 };

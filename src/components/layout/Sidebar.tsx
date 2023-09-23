@@ -33,13 +33,14 @@ const Sidebar = () => {
     setChildActive(key);
   };
 
-  console.log(items);
-
   return (
     <>
-      <div className="w-[300px] h-screen p-[25px] bg-default-light dark:bg-default-dark relative">
-        <div className="px-12 font-semibold mb-16">Wallet</div>
-        <div className="space-y-[25px]">
+      <div className="w-[260px] h-screen bg-default-light dark:bg-default-dark relative">
+        <div className="px-12 pt-[25px] font-semibold mb-8 flex justify-start items-center gap-x-3">
+          <Icons.logo className="w-[60px] h-[60px]" />
+          Wallet
+        </div>
+        <div className="space-y-[5px]">
           {menuList?.length &&
             menuList?.map((item, index) => {
               let active = childActive;
@@ -49,7 +50,7 @@ const Sidebar = () => {
               return (
                 <Collapsible
                   key={index}
-                  className="CollapsibleRoot"
+                  className="px-[25px] py-[10px] cursor-pointer hover:menu-theme"
                   open={open === item.key}
                   onOpenChange={() => handleCollapse(item.key, item)}
                 >
@@ -102,7 +103,7 @@ const Sidebar = () => {
               );
             })}
         </div>
-        <div className="space-y-[25px] mt-[30px] pt-[30px] border-t-[1px] border-[#636363]">
+        <div className="space-y-[5px] mt-[30px] pt-[30px] border-t-[1px] border-[#636363]">
           {actionMenu?.length &&
             actionMenu?.map((item, index) => {
               let active = childActive;
@@ -112,7 +113,7 @@ const Sidebar = () => {
               return (
                 <Collapsible
                   key={index}
-                  className="CollapsibleRoot"
+                  className="px-[25px] py-[10px] cursor-pointer hover:menu-theme"
                   open={open === item.key}
                   onOpenChange={() => handleCollapse(item.key, item)}
                 >
@@ -144,7 +145,7 @@ const Sidebar = () => {
               );
             })}
         </div>
-        <div className="absolute bottom-7">
+        <div className="absolute bottom-7 left-[25px]">
           <Switch
             label={items.switchTheme ? 'Switch to light' : 'Switch to dark'}
             setTheme={setTheme}

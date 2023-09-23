@@ -75,9 +75,9 @@ const BarChart: React.FC<Props> = ({ className, chartClassName, data }: Props) =
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Legend />
-            <Bar dataKey="pv" fill="#8884d8" />
-            <Bar dataKey="uv" fill="#82ca9d" />
+            {/* <Legend /> */}
+            <Bar dataKey="pv" fill="#9c50a5" />
+            <Bar dataKey="uv" fill="#755cca" />
           </SimpleBarChart>
         </ResponsiveContainer>
       </div>

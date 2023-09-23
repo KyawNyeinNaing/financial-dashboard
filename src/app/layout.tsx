@@ -25,13 +25,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <head />
         <body>
           <JotaiProvider>
-            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
               <Theme>
                 <div className="flex justify-start items-start">
                   <div className="fixed top-0 left-0">
                     <Sidebar />
                   </div>
-                  <div className="w-full ml-[300px] bg-primary-light dark:bg-primary-dark px-4">
+                  <div className="w-full ml-[260px] bg-primary-light dark:bg-primary-dark px-4">
                     <Header />
                     <div>{children}</div>
                   </div>
