@@ -42,7 +42,7 @@ const Investment: React.FC<Props> = ({ className }: Props) => {
       {investmentData?.map((each, key) => (
         <Flex key={key} justify="between">
           <Flex justify="start" gap="3">
-            <div className="bg-theme w-[35px] h-[35px] rounded-full flex justify-center items-center">
+            <div className="light-bg-theme dark:bg-theme w-[35px] h-[35px] rounded-full flex justify-center items-center">
               {each.icon}
             </div>
             <Flex direction="column">

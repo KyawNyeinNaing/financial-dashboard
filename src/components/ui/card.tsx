@@ -10,7 +10,7 @@ interface Props {
 
 const CardBox: React.FC<Props> = ({ children, className }: Props) => {
   return (
-    <CardStyled className={cn('rounded-[15px] overflow-hidden', className)}>{children}</CardStyled>
+    <CardStyled className={cn('rounded-[6px] overflow-hidden', className)}>{children}</CardStyled>
   );
 };
 

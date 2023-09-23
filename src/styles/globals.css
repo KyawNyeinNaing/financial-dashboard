@@ -20,6 +20,9 @@
   .bg-theme {
     @apply bg-gradient-to-r from-gradient-left to-gradient-right hover:from-pink-500 hover:to-yellow-500
   }
+  .light-bg-theme {
+    @apply bg-gradient-to-r from-gradientLight-left to-gradientLight-right hover:from-pink-500 hover:to-yellow-500
+  }
 }
 
 body {

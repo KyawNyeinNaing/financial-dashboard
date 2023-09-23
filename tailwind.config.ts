@@ -42,6 +42,10 @@ const config: Config = {
           left: '#5965b7',
           right: '#714caa',
         },
+        gradientLight: {
+          left: '#ebf0ff',
+          right: '#eadefe',
+        },
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],

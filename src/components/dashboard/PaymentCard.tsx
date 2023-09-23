@@ -34,9 +34,6 @@ const PaymentCard: React.FC<Props> = ({ className }: Props) => {
           <SelectTrigger icon={SELECT_ICONS.PLUS} className="h-8 w-[70px] border-none">
             <SelectValue placeholder="add" />
           </SelectTrigger>
-          <SelectContent side="top">
-            <SelectItem value="add">add</SelectItem>
-          </SelectContent>
         </Select>
       </Flex>
       <div className="relative">

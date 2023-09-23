@@ -37,15 +37,12 @@ const GoalsCard: React.FC<Props> = ({ className }: Props) => {
           <SelectTrigger icon={SELECT_ICONS.PLUS} className="h-8 w-[100px] border-none">
             <SelectValue placeholder="add goal" />
           </SelectTrigger>
-          <SelectContent side="top">
-            <SelectItem value="add goal">add goal</SelectItem>
-          </SelectContent>
         </Select>
       </Flex>
       {goalsData?.map((each, key) => (
         <Flex key={key} justify="between">
           <Flex justify="start" gap="3">
-            <div className="bg-theme w-[35px] h-[35px] rounded-full flex justify-center items-center">
+            <div className="light-bg-theme dark:bg-theme w-[35px] h-[35px] rounded-full flex justify-center items-center">
               {each.icon}
             </div>
             <Flex direction="column">
