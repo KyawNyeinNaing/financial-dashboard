@@ -53,7 +53,7 @@ export class FetchAPI {
     }
 
     try {
-      const response = await fetch(url, requestOptions);
+      const response: Response = await fetch(url, requestOptions);
       if (!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
       }
@@ -66,21 +66,6 @@ export class FetchAPI {
       console.error('Error:', error);
       throw error;
     }
-
-    return await fetch(url, requestOptions)
-      .then(async (res: Response) => {
-        const result = await res.json();
-
-        return {
-          ...result,
-          lastFetchUpdated: dayjs().format('ddd, DD MMM YYYY HH:mm:ss [GMT]'),
-        };
-      })
-      .catch((error: Error) => {
-        console.log('error -> ', error);
-        console.log('ERROR ==>', JSON.stringify(error));
-        throw new Error(error?.message);
-      });
   }
 
   async getApi(path: string, params: ParameterType): Promise<People> {
