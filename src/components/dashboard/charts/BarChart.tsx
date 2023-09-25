@@ -1,19 +1,16 @@
 'use client';
 import React from 'react';
 import {
-  BarChart as SimpleBarChart,
   Bar,
-  Cell,
+  BarChart as SimpleBarChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
 } from 'recharts';
+
 import CardBox from '@/components/ui/card';
-import { Box, Container, Flex, Grid } from '@radix-ui/themes';
-import { Text } from '@/components/ui/typography';
 import {
   Select,
   SelectContent,
@@ -21,9 +18,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Icons } from '@/components/ui/image';
-import { cn } from '@/shared/cn';
+import { Text } from '@/components/ui/typography';
 import { Financial } from '@/data/analysis/financial';
+import { cn } from '@/shared/cn';
+import { Flex } from '@radix-ui/themes';
 
 interface Props {
   data: Financial[];

@@ -1,20 +1,13 @@
 'use client';
+import React from 'react';
+import styled, { css } from 'styled-components';
+
 import CardBox from '@/components/ui/card';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { Select, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Text } from '@/components/ui/typography';
 import { cn } from '@/shared/cn';
+import { SELECT_ICONS } from '@/shared/enum';
 import { Flex } from '@radix-ui/themes';
-import React from 'react';
-import { Icons, Image } from '@/components/ui/image';
-import { transactionData } from '@/data/transaction';
-import { CONDITION, SELECT_ICONS } from '@/shared/enum';
-import styled, { css } from 'styled-components';
 
 interface Props {
   className?: string;
@@ -46,11 +39,10 @@ const PaymentCard: React.FC<Props> = ({ className }: Props) => {
 export default PaymentCard;
 
 const CardStyled = styled.div<{ src: string; width?: number; height?: number }>`
-  ${({ src, width, height }) =>
-    css`
-      background: url('${src}') no-repeat center / contain;
-      width: ${width}px;
-      height: ${height}px;
-      margin-top: -20px;
-    `}
+  ${({ src, width, height }) => css`
+    background: url('${src}') no-repeat center / contain;
+    width: ${width}px;
+    height: ${height}px;
+    margin-top: -20px;
+  `}
 `;

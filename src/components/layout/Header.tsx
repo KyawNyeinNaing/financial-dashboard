@@ -1,21 +1,25 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
-
-import { cn } from '@/shared/cn';
-import { Box, Container, Flex, Grid } from '@radix-ui/themes';
-
-import { buttonVariants } from '@/components/ui/button';
-import { Icons, Image } from '@/components/ui/image';
-import { Text } from '@/components/ui/typography';
-import { InputSearch } from '../ui/input';
-import CardBox from '../ui/card';
+import React, { useEffect } from 'react';
+import { useAtom } from 'jotai';
 import styled from 'styled-components';
+
+import { Icons } from '@/components/ui/image';
+import { Text } from '@/components/ui/typography';
 import { useWindowSize } from '@/hooks/useWindowSize';
+import { windowWidthAtom } from '@/shared/atom';
 import { WINDOW_WIDTH } from '@/shared/enum';
+import { Box, Flex, Grid } from '@radix-ui/themes';
+
+import CardBox from '../ui/card';
+import { InputSearch } from '../ui/input';
 
 const Header: React.FC = () => {
   const { windowWidth } = useWindowSize();
+  const [, setWindowSize] = useAtom(windowWidthAtom);
+
+  useEffect(() => {
+    setWindowSize(windowWidth);
+  }, [windowWidth]);
 
   return (
     <Grid columns="1" py="5">

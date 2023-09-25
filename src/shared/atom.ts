@@ -1,7 +1,8 @@
 'use client';
 import { atom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
 
-import { PeopleResult } from '@/types';
+import { WINDOW_WIDTH } from './enum';
 
 export const searchAtom = atom<string>('');
-export const peopleAtom = atom<PeopleResult[]>([]);
+export const windowWidthAtom = atomWithStorage<WINDOW_WIDTH | null>('window_size', null);

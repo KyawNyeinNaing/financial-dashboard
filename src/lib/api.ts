@@ -1,17 +1,6 @@
 import dayjs from 'dayjs';
 
-import {
-  ApiResponse,
-  Film,
-  People,
-  PeopleResult,
-  Planet,
-  RelativeFilm,
-  RelativeHomeWorld,
-  Species,
-  StarShips,
-  Vehicle,
-} from '@/types';
+import { ApiResponse } from '@/types';
 
 export interface ParameterType {
   search?: string | string[] | undefined;
@@ -68,11 +57,11 @@ export class FetchAPI {
     }
   }
 
-  async getApi(path: string, params: ParameterType): Promise<People> {
+  async getApi(path: string, params: ParameterType): Promise<any> {
     return await this.sendApiRequest(path, params, 'GET');
   }
 
-  async sendApi(path: string, params: ParameterType): Promise<People> {
+  async sendApi(path: string, params: ParameterType): Promise<any> {
     return await this.sendApiRequest(path, params, 'POST');
   }
 

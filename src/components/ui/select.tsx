@@ -2,10 +2,10 @@
 import * as React from 'react';
 
 import { cn } from '@/shared/cn';
+import { SELECT_ICONS } from '@/shared/enum';
 import * as SelectPrimitive from '@radix-ui/react-select';
 
 import { Icons } from './image';
-import { SELECT_ICONS } from '@/shared/enum';
 
 const Select = SelectPrimitive.Root;
 

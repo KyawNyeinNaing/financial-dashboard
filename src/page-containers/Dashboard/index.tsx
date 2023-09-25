@@ -1,13 +1,14 @@
+import React from 'react';
+
 import BarChart from '@/components/dashboard/charts/BarChart';
+import PieChart from '@/components/dashboard/charts/PieChart';
+import StackedAreaChart from '@/components/dashboard/charts/StackedAreaChart';
+import TinyAreaChart from '@/components/dashboard/charts/TinyAreaChart';
 import GoalsCard from '@/components/dashboard/GoalsCard';
 import Investment from '@/components/dashboard/Investment';
 import PaymentCard from '@/components/dashboard/PaymentCard';
-import PieChart from '@/components/dashboard/charts/PieChart';
 import QuickTransfer from '@/components/dashboard/QuickTransfer';
-import StackedAreaChart from '@/components/dashboard/charts/StackedAreaChart';
-import TinyAreaChart from '@/components/dashboard/charts/TinyAreaChart';
 import Transactions from '@/components/dashboard/Transactions';
-import React from 'react';
 import { expensesData, incomeData, investmentData } from '@/data';
 import { analysisData } from '@/data/analysis';
 import { financialData } from '@/data/analysis/financial';

@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+
 import * as Collapse from '@radix-ui/react-collapsible';
 // import { RowSpacingIcon, Cross2Icon } from '@radix-ui/react-icons';
 // import './styles.css';
@@ -16,4 +17,4 @@ const CollapsibleContent = React.forwardRef<
 ));
 CollapsibleContent.displayName = 'Collapsible';
 
-export { Collapsible, CollapsibleTrigger, CollapsibleContent };
+export { Collapsible, CollapsibleContent, CollapsibleTrigger };

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card } from '@radix-ui/themes';
 import styled from 'styled-components';
+
 import { cn } from '@/shared/cn';
 
 interface Props {
@@ -17,5 +17,7 @@ const CardBox: React.FC<Props> = ({ children, className }: Props) => {
 export default CardBox;
 
 const CardStyled = styled.div`
-  box-shadow: rgb(234, 236, 240) 0px 0px 1px, rgba(29, 41, 57, 0.08) 0px 1px 3px;
+  box-shadow:
+    rgb(234, 236, 240) 0px 0px 1px,
+    rgba(29, 41, 57, 0.08) 0px 1px 3px;
 `;

@@ -1,10 +1,14 @@
 import NextImage from 'next/image';
+import { CiLogout, CiSettings } from 'react-icons/ci';
+import { FcBusinesswoman } from 'react-icons/fc';
+import { IoLogoApple, IoNotificationsOutline } from 'react-icons/io5';
+import { MdOutlineMailOutline } from 'react-icons/md';
 import {
   PiAirplaneTiltLight,
   PiArrowDownRightThin,
-  PiArrowUpRightThin,
   PiArrowsLeftRightDuotone,
   PiArrowsLeftRightThin,
+  PiArrowUpRightThin,
   PiBagSimpleThin,
   PiCameraLight,
   PiCar,
@@ -24,13 +28,7 @@ import {
   PiWallet,
 } from 'react-icons/pi';
 import { RxCross2, RxDashboard, RxMagnifyingGlass } from 'react-icons/rx';
-import { MdOutlineMailOutline } from 'react-icons/md';
-import { IoLogoApple, IoNotificationsOutline } from 'react-icons/io5';
-import { FcBusinesswoman } from 'react-icons/fc';
 import { SiAmazon, SiNetflix, SiTesla, SiVivawallet } from 'react-icons/si';
-import { CiLogout, CiSettings } from 'react-icons/ci';
-
-import { IconType } from '@/shared/enum';
 
 export const Icons = {
   loading: ({ ...props }) => {

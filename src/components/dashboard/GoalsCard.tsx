@@ -1,23 +1,14 @@
 'use client';
-import CardBox from '@/components/ui/card';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import { Text } from '@/components/ui/typography';
-import { cn } from '@/shared/cn';
-import { Flex } from '@radix-ui/themes';
 import React from 'react';
+
+import CardBox from '@/components/ui/card';
 import { Icons } from '@/components/ui/image';
-import { transactionData } from '@/data/transaction';
-import { CONDITION, SELECT_ICONS } from '@/shared/enum';
-import { quickTransferData } from '@/data/quickTransfer';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { maskNumber } from '@/lib/utils';
+import { Select, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Text } from '@/components/ui/typography';
 import { goalsData } from '@/data/goals';
+import { cn } from '@/shared/cn';
+import { SELECT_ICONS } from '@/shared/enum';
+import { Flex } from '@radix-ui/themes';
 
 interface Props {
   className?: string;

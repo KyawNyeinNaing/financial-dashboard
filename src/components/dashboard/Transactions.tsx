@@ -1,4 +1,6 @@
 'use client';
+import React from 'react';
+
 import CardBox from '@/components/ui/card';
 import {
   Select,
@@ -8,12 +10,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Text } from '@/components/ui/typography';
-import { cn } from '@/shared/cn';
-import { Flex } from '@radix-ui/themes';
-import React from 'react';
-import { Icons } from '@/components/ui/image';
 import { transactionData } from '@/data/transaction';
+import { cn } from '@/shared/cn';
 import { CONDITION } from '@/shared/enum';
+import { Flex } from '@radix-ui/themes';
 
 interface Props {
   className?: string;

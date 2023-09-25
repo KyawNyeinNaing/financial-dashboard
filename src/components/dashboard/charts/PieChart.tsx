@@ -1,9 +1,8 @@
 'use client';
-import React, { useState } from 'react';
-import { PieChart as PieReChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { Cell, Pie, PieChart as PieReChart, ResponsiveContainer } from 'recharts';
+
 import CardBox from '@/components/ui/card';
-import { Box, Container, Flex, Grid } from '@radix-ui/themes';
-import { Text } from '@/components/ui/typography';
 import {
   Select,
   SelectContent,
@@ -11,7 +10,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { Text } from '@/components/ui/typography';
 import { cn } from '@/shared/cn';
+import { Flex } from '@radix-ui/themes';
 
 const data = [
   { name: 'Supermarkets', value: 186.65 },

@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import * as SwitchPrimitives from '@radix-ui/react-switch';
-import { cn } from '@/shared/cn';
 import styled from 'styled-components';
-import { Flex } from '@radix-ui/themes';
+
 import useAtomReducer from '@/hooks/useAtomReducer';
 import { TYPES } from '@/shared/enum';
+import * as SwitchPrimitives from '@radix-ui/react-switch';
+import { Flex } from '@radix-ui/themes';
 
 const SwitchStyled = styled(Flex)`
   .root {
@@ -48,7 +48,7 @@ const Switch = React.forwardRef<
   } & React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
 >(({ className, label, setTheme, ...props }, ref) => {
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
-  const { itemList } = useAtomReducer(TYPES.SWITCH_THEME);
+  const { setItems } = useAtomReducer(TYPES.SWITCH_THEME);
 
   return (
     <SwitchStyled align="center" gap="4">
@@ -56,7 +56,7 @@ const Switch = React.forwardRef<
         checked={isChecked}
         onCheckedChange={check => {
           setIsChecked(check);
-          itemList(check);
+          setItems(check);
           setTheme(check ? 'dark' : 'light');
         }}
         className="w-[30px] h-[15px] root bg-white dark:bg-theme"

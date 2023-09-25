@@ -1,17 +1,16 @@
 'use client';
 import React from 'react';
 import {
-  AreaChart,
   Area,
+  AreaChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
 } from 'recharts';
+
 import CardBox from '@/components/ui/card';
-import { Box, Container, Flex, Grid } from '@radix-ui/themes';
-import { Text } from '@/components/ui/typography';
 import {
   Select,
   SelectContent,
@@ -19,9 +18,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Icons } from '@/components/ui/image';
-import { cn } from '@/shared/cn';
+import { Text } from '@/components/ui/typography';
 import { Analysis } from '@/data/analysis';
+import { cn } from '@/shared/cn';
+import { Flex } from '@radix-ui/themes';
 
 interface Props {
   data: Analysis[];

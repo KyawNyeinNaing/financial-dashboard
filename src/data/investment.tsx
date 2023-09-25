@@ -1,5 +1,5 @@
-import { CONDITION } from '@/shared/enum';
 import { Icons } from '@/components/ui/image';
+import { CONDITION } from '@/shared/enum';
 
 export interface Investment {
   name: string;

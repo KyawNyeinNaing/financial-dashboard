@@ -1,10 +1,11 @@
+'use client';
 import { atom, useAtom } from 'jotai';
 
-import { PeopleResult } from '@/types';
-import { TYPES } from '@/shared/enum';
+import { TYPES, WINDOW_WIDTH } from '@/shared/enum';
 
 interface State {
   switchTheme: boolean | null;
+  windowWidth: WINDOW_WIDTH | null;
 }
 
 interface Action {
@@ -14,6 +15,7 @@ interface Action {
 
 const initialState: State = {
   switchTheme: false,
+  windowWidth: null,
 };
 
 const reducer = (state: State, action: Action) => {
@@ -36,7 +38,7 @@ const reducerAtom = atom(initialState, (get, set, action) => {
 const useAtomReducer = (type: TYPES) => {
   const [items, dispatch] = useAtom(reducerAtom);
 
-  const itemList = (payload: any) => {
+  const setItems = (payload: any) => {
     dispatch({
       type,
       payload,
@@ -45,7 +47,7 @@ const useAtomReducer = (type: TYPES) => {
 
   return {
     items,
-    itemList,
+    setItems,
   };
 };
 

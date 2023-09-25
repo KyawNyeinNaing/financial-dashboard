@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "code-style": "yarn eslint --ext ts,tsx .",
+    "code-style-fix": "yarn eslint --fix  --ext ts,tsx .",
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    }
   },
   "dependencies": {
     "@ariakit/react": "^0.3.2",
@@ -35,6 +42,7 @@
     "next": "13.5.1",
     "next-themes": "^0.2.1",
     "postcss": "8.4.30",
+    "prettier": "^3.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",

@@ -5,6 +5,7 @@ export enum IconType {
 
 export enum TYPES {
   SWITCH_THEME = 'SWITCH_THEME',
+  RESPONSIVE_SIZE = 'RESPONSIVE_SIZE',
 }
 
 export enum CONDITION {

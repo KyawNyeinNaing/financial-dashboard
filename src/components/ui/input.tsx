@@ -1,6 +1,8 @@
-import { IconButton, TextField } from '@radix-ui/themes';
 import React from 'react';
 import styled from 'styled-components';
+
+import { IconButton, TextField } from '@radix-ui/themes';
+
 import { Icons } from './image';
 
 type Props = {
@@ -65,7 +67,7 @@ const InputSearch = React.forwardRef<HTMLInputElement, InputProps>(
 );
 InputSearch.displayName = 'InputSearch';
 
-export { InputText, InputSearch };
+export { InputSearch, InputText };
 
 const InputStyled = styled.input`
   color: #ffffff;

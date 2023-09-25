@@ -1,15 +1,16 @@
 'use client';
 import React from 'react';
+import { useRouter } from 'next/navigation';
+import { useTheme } from 'next-themes';
+
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Icons } from '@/components/ui/image';
-import { cn } from '@/shared/cn';
-import { actionMenu, menuList } from './MenuList';
-import { useRouter } from 'next/navigation';
-import { Flex } from '@radix-ui/themes';
 import { Switch } from '@/components/ui/switch';
-import { useTheme } from 'next-themes';
 import useAtomReducer from '@/hooks/useAtomReducer';
+import { cn } from '@/shared/cn';
 import { TYPES } from '@/shared/enum';
+
+import { actionMenu, menuList } from './MenuList';
 
 const Sidebar = () => {
   const [open, setOpen] = React.useState<string | null>('/dashboard');

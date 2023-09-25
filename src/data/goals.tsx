@@ -1,5 +1,4 @@
 import { Icons } from '@/components/ui/image';
-import { GOALS_ICONS } from '@/shared/enum';
 
 export interface Goals {
   name: string;
