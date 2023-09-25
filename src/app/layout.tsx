@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
-import Header from '@/components/layout/Header';
-import Sidebar from '@/components/layout/Sidebar';
+import PageLayout from '@/components/layout/PageLayout';
 import { fontSans } from '@/configs/fonts';
 import { JotaiProvider } from '@/providers/jotai';
 import { ThemeProvider } from '@/providers/theme';
@@ -26,15 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <JotaiProvider>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
               <Theme>
-                <div className="flex justify-start items-start">
-                  <div className="fixed top-0 left-0">
-                    <Sidebar />
-                  </div>
-                  <div className="w-full lg:ml-[260px] bg-primary-light dark:bg-primary-dark px-4">
-                    <Header />
-                    <div>{children}</div>
-                  </div>
-                </div>
+                <PageLayout>{children}</PageLayout>
               </Theme>
             </ThemeProvider>
           </JotaiProvider>
