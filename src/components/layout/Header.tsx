@@ -11,15 +11,29 @@ import { Text } from '@/components/ui/typography';
 import { InputSearch } from '../ui/input';
 import CardBox from '../ui/card';
 import styled from 'styled-components';
+import { useWindowSize } from '@/hooks/useWindowSize';
+import { WINDOW_WIDTH } from '@/shared/enum';
 
 const Header: React.FC = () => {
+  const { windowWidth } = useWindowSize();
+
   return (
     <Grid columns="1" py="5">
-      <Flex justify="between" align="center">
+      <Flex
+        gap="4"
+        justify="between"
+        align={windowWidth > WINDOW_WIDTH.LG ? 'center' : 'start'}
+        direction={windowWidth > WINDOW_WIDTH.LG ? 'row' : 'column'}
+      >
         <Box>
           <Text size="4">Dashboard</Text>
         </Box>
-        <Flex gap="6" justify="center" align="center">
+        <Flex
+          gap="6"
+          justify="center"
+          align="center"
+          direction={windowWidth > WINDOW_WIDTH.LG ? 'row' : 'column'}
+        >
           <Box>
             <InputSearch type="text" placeholder="Search..." />
           </Box>
