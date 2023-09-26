@@ -1,10 +1,17 @@
 'use client';
 import React, { ReactNode, useEffect, useRef } from 'react';
 
-import '@/styles/drawer.css';
 import { cn } from '@/shared/cn';
 
-export const HamburgerDrawer = ({ children, className }: { children: ReactNode, className?: string }) => {
+import '@/styles/drawer.css';
+
+export const HamburgerDrawer = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
   const checkbox = useRef<any>(null);
 
   const handleEscKey = (event: any) => {
@@ -30,7 +37,7 @@ export const HamburgerDrawer = ({ children, className }: { children: ReactNode, 
   }, []);
 
   return (
-    <>
+    <div>
       <nav className={cn('HamburgerDrawer', className)} aria-label="Main menu">
         <input
           ref={checkbox}
@@ -48,7 +55,7 @@ export const HamburgerDrawer = ({ children, className }: { children: ReactNode, 
         </div>
         <div className="HamburgerDrawer-panel">{children}</div>
       </nav>
-    </>
+    </div>
   );
 };
 
