@@ -12,7 +12,11 @@ import { TYPES } from '@/shared/enum';
 
 import { actionMenu, menuList } from './MenuList';
 
-const Sidebar = () => {
+interface Props {
+  className?: string;
+}
+
+const Sidebar: React.FC<Props> = ({ className }: Props) => {
   const [open, setOpen] = React.useState<string | null>('/dashboard');
   const [childActive, setChildActive] = React.useState<string>('/dashboard');
   const router = useRouter();
@@ -36,7 +40,12 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="w-[260px] h-screen bg-default-light dark:bg-default-dark relative">
+      <div
+        className={cn(
+          'lg:w-[260px] h-screen bg-default-light dark:bg-default-dark relative',
+          className
+        )}
+      >
         <div className="px-12 pt-[25px] font-semibold mb-8 flex justify-start items-center gap-x-3">
           <Icons.logo className="w-[60px] h-[60px]" />
           Wallet
@@ -146,7 +155,7 @@ const Sidebar = () => {
               );
             })}
         </div>
-        <div className="absolute bottom-7 left-[25px]">
+        <div className="absolute lg:bottom-7 lg:left-[25px] maxMd:top-[20px] maxMd:right-[20px]">
           <Switch
             label={items.switchTheme ? 'Switch to light' : 'Switch to dark'}
             setTheme={setTheme}

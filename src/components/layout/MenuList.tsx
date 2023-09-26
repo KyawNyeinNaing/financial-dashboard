@@ -13,7 +13,7 @@ export interface Menu {
 
 export const menuList: Menu[] = [
   {
-    key: '/dashboard',
+    key: '/',
     icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
     title: 'Dashboard',
     child: [],

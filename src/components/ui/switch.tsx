@@ -3,7 +3,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import useAtomReducer from '@/hooks/useAtomReducer';
-import { TYPES } from '@/shared/enum';
+import { cn } from '@/shared/cn';
+import { THEME, TYPES } from '@/shared/enum';
 import * as SwitchPrimitives from '@radix-ui/react-switch';
 import { Flex } from '@radix-ui/themes';
 
@@ -44,11 +45,15 @@ const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   {
     label?: string;
+    theme?: string;
     setTheme: (theme: string) => void;
   } & React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
->(({ className, label, setTheme, ...props }, ref) => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
+>(({ className, label, theme, setTheme, ...props }, ref) => {
+  const [isChecked, setIsChecked] = React.useState<boolean>(theme === THEME.LIGHT ? false : true);
   const { setItems } = useAtomReducer(TYPES.SWITCH_THEME);
+
+  console.log('theme -> ', theme);
+  console.log('isChecked -> ', isChecked);
 
   return (
     <SwitchStyled align="center" gap="4">
@@ -59,9 +64,10 @@ const Switch = React.forwardRef<
           setItems(check);
           setTheme(check ? 'dark' : 'light');
         }}
-        className="w-[30px] h-[15px] root bg-white dark:bg-theme"
+        className={cn('w-[30px] h-[15px] root bg-white dark:bg-theme', className)}
         id="airplane-mode"
         {...props}
+        ref={ref}
       >
         <SwitchPrimitives.Thumb className="thumb bg-black dark:bg-white" />
       </SwitchPrimitives.Root>

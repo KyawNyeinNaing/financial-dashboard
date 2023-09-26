@@ -47,6 +47,12 @@ const config: Config = {
           right: '#eadefe',
         },
       },
+      screens: {
+        maxLg: { max: '1023px' },
+        maxMd: { max: '991px' },
+        maxSm: { max: '767px' },
+        maxXs: { max: '374px' },
+      },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
       },

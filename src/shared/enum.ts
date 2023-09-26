@@ -31,3 +31,8 @@ export enum WINDOW_WIDTH {
   MD = 768,
   SM = 640,
 }
+
+export enum THEME {
+  DARK = 'dark',
+  LIGHT = 'light',
+}
