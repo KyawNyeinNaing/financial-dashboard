@@ -30,7 +30,7 @@ const SwitchStyled = styled(Flex)`
       transform: translateX(2px);
       will-change: transform;
       &[data-state='checked'] {
-        transform: translateX(19px);
+        transform: translateX(15px);
       }
     }
   }
@@ -49,16 +49,13 @@ const Switch = React.forwardRef<
     setTheme: (theme: string) => void;
   } & React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
 >(({ className, label, theme, setTheme, ...props }, ref) => {
-  const [isChecked, setIsChecked] = React.useState<boolean>(theme === THEME.LIGHT ? false : true);
+  const [isChecked, setIsChecked] = React.useState<boolean>(theme === THEME.LIGHT ? true : false);
   const { setItems } = useAtomReducer(TYPES.SWITCH_THEME);
-
-  console.log('theme -> ', theme);
-  console.log('isChecked -> ', isChecked);
 
   return (
     <SwitchStyled align="center" gap="4">
       <SwitchPrimitives.Root
-        checked={isChecked}
+        checked={isChecked || false}
         onCheckedChange={check => {
           setIsChecked(check);
           setItems(check);
